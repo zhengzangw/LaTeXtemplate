@@ -3,8 +3,8 @@
 %%%%% CHINESE %%%%%
 \newcommand{\zhsupport}{
 	\usepackage{zhlipsum}
-	\usepackage{ctex}
 	\usepackage{indentfirst}
+	\usepackage{ctex}
 	\setCJKmainfont[ItalicFont={Kaiti SC}, BoldFont={PingFang SC}]{Songti SC}
 	\setCJKsansfont{PingFang SC}
 	\setCJKmonofont{STFangsong}
@@ -57,7 +57,8 @@
 
 %%%%% Font Type %%%%%
 \RequirePackage[no-math]{fontspec}
-\setmainfont{Times New Roman}[NFSSFamily=ntxtlf]
+\setmainfont{Times New Roman}[NFSSFamily=ntxtlf,SmallCapsFont=Latin Modern Mono Caps,
+SmallCapsFeatures={Letters=SmallCaps}]
 \setsansfont{Helvetica} %Arial
 \setmonofont{Courier New}
 \RequirePackage{soul,ulem,xcolor,lettrine}
@@ -96,23 +97,23 @@
 \newcommand{\maketitlepage}[3]{
 	\begin{titlepage}
 		\begin{center}
-			\textsc{\LARGE #1}\\[1.5cm]
-			\textsc{\Large #2}\\
-			\HRule \\[0.4cm]
-			{ \huge \bfseries #3}\\
-			\HRule \\[1.5cm]
+		{\scshape\LARGE #1}\\[1.5cm]
+		{\scshape\Large #2}\\
+		\HRule \\[0.4cm]
+		{ \huge \sffamily\bfseries #3}\\
+		\HRule \\[1.5cm]
 			
-			\begin{flushleft}
-				\hspace{5cm}
-				\begin{tabular}{@{\hspace{0.2cm}}l@{:\hspace{1cm}}l}
-					\textit{\AUTHOR} & \NAME\\
-					\textit{\STDID} & 171860658\\
-					\textit{\EMAIL} & \href{mailto:zzw@smail.nju.edu.cn}{\textcolor{black}{zzw@smail.nju.edu.cn}}\\
-				    \textit{\MAJOR} & \MYMAJOR\\
-				\end{tabular}
-			\end{flushleft}
-			\vfill
-			{\large \DTMsetdatestyle{en-US} \DTMtoday}
+		\begin{flushleft}
+			\hspace{5cm}
+			\begin{tabular}{@{\hspace{0.2cm}}l@{:\hspace{1cm}}l}
+				\textit{\AUTHOR} & \NAME\\
+				\textit{\STDID} & 171860658\\
+				\textit{\EMAIL} & \href{mailto:zzw@smail.nju.edu.cn}{\textcolor{black}{zzw@smail.nju.edu.cn}}\\
+				\textit{\MAJOR} & \MYMAJOR\\
+			\end{tabular}
+		\end{flushleft}
+		\vfill
+		{\large \DTMsetdatestyle{en-US} \DTMtoday}
 		\end{center}
 	\end{titlepage}
 }
@@ -205,6 +206,7 @@
 }
 
 %%%%% newtheorem %%%%%
+\newcommand{\theoremindent}{\hspace{1.7em}}
 \makeatletter
 \let\openbox\relax
 \makeatother
@@ -262,24 +264,24 @@
 
 \RequirePackage{listings}
 \lstset{
-	basicstyle=\small,
-	keywordstyle=\color{magenta}\bfseries,
-	commentstyle=\color{codegreen},
-	stringstyle=\color{codepurple}\ttfamily,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{magenta}\bfseries\ttfamily,
+	commentstyle=\color{codegreen}\ttfamily,
+	stringstyle=\color{codepurple}\ttfamily\sffamily,
 	backgroundcolor=\color{backcolour},
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
 	keepspaces=true,
 	numbers=left,
-	numberstyle=\tiny\color{codegray},
+	numberstyle=\small\color{codegray},
 	stepnumber=2,
 	numbersep=5pt,
 	showstringspaces=false,
 	showspaces=false,
 	showtabs=false,
 	tabsize=2,
-	frame=trBL
+	frame=tb
 }
 
 %%%%% Bibliography %%%%%
@@ -292,5 +294,15 @@
 \RequirePackage[colorlinks,linkcolor=blue,anchorcolor=blue，citecolor=red]{hyperref}
 \RequirePackage{cleveref} %cref{}
 
+\makeatletter
+\newcommand{\showfont}{Encoding: \f@encoding{},
+  Family: \f@family{},
+  Series: \f@series{},
+  Shape: \f@shape{},
+  Size: \f@size{}
+}
+\makeatother
+
 %%%%% HELP %%%%%
 % http://www.latexstudio.net/hulatex/index.htm
+% http://www.gust.org.pl/projects/e-foundry/latin-modern
