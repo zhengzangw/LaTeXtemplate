@@ -9,3 +9,5 @@ Templates for LaTeX
 | letter        | for English letter |
 | cv            | for CV             |
 
+**IF YOU FIND ANY PROBLEM, WELCOME TO CONTANT ME!**
+
