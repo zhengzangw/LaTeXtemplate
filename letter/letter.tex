@@ -1,0 +1,53 @@
+\documentclass[10pt,stdletter]{newlfm}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@zfancyhead}{\fancy@reset}{\f@nch@reset}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyorh}{\f@nch@orh}{}{}
+\makeatother
+\usepackage{charter}
+\usepackage{lipsum}
+\widowpenalty=1000
+\clubpenalty=1000
+\newsavebox{\Luiuc}
+\sbox{\Luiuc}{%
+	\parbox[b]{1.75in}{%
+		\vspace{0.5in}%
+		\includegraphics[scale=0.005,ext=.eps]{njulogo.pdf}%
+	}%
+}%
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+\newlfmP{headermarginskip=20pt}
+\newlfmP{sigsize=50pt}
+\newlfmP{dateskipafter=20pt}
+\newlfmP{addrfromphone}
+\newlfmP{addrfromemail}
+\PhrPhone{Phone}
+\PhrEmail{Email}
+\lthUiuc
+
+%%%%% CUSTIOM %%%%%
+\namefrom{Zangwei Zheng}
+\addrfrom{%
+	\today\\[12pt] % Date
+	Nanjing Univercity \\ % Address
+	Nanjing, Jiangsu 210023
+}
+\phonefrom{86-188520019}
+\emailfrom{zzw@smail.nju.edu.cn}
+\addrto{%
+	Faculty Search Committee\\
+	Department of Computer Science\\
+	Clemson University\\
+	Clemson, SC 29634-0974
+}
+\greetto{To Whom It May Concern,}
+\closeline{Sincerely,}
+
+\begin{document}
+	\begin{newlfm}
+		\input{main}
+	\end{newlfm}
+\end{document}
+

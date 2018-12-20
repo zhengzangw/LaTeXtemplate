@@ -1,0 +1,28 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{preamble}
+
+%%%%% FUNCTION %%%%%
+\linespread{1} %line-skip(*1.2)
+%\syntaxonly
+%\watermark
+\zhsupport
+
+\begin{document}
+%%%%% TITLE PAGE %%%%%
+\maketitlepage{Article Template}{Version 2018}{Article Title}
+%%%%% TITEL %%%%%
+\mktitle{Article Title}
+%%%%% ABSTRACT %%%%%
+\begin{abstract}
+    This project depends on package preamble.sty. To add optional part, recover the comment.
+\end{abstract}
+%%%%% MAIN PART %%%%%
+\input{main}
+%%%%% BIBLIOGRAPHY %%%%%
+\bibliography{reference/refer}
+\phantomsection
+\addcontentsline{toc}{section}{\refname}
+\markboth{\refname}{\refname}
+\nocite{*}
+%%%%% END %%%%%
+\end{document}

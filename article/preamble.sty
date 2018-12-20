@@ -1,0 +1,299 @@
+\ProvidesPackage{preamble}
+
+%%%%% CHINESE %%%%%
+\newcommand{\zhsupport}{
+	\usepackage{zhlipsum}
+	\usepackage{ctex}
+	\usepackage{indentfirst}
+	\setCJKmainfont[ItalicFont={Kaiti SC}, BoldFont={PingFang SC}]{Songti SC}
+	\setCJKsansfont{PingFang SC}
+	\setCJKmonofont{STFangsong}
+	\renewcommand{\AUTHOR}{作者}
+	\renewcommand{\STDID}{学号}
+	\renewcommand{\EMAIL}{邮箱}
+	\renewcommand{\MAJOR}{专业}
+	\renewcommand{\NAME}{郑奘巍}
+	\renewcommand{\MYMAJOR}{计算机科学与技术系}
+	\renewcommand{\appendixname}{附录}
+	\renewcommand{\ACKNOWLEDGEMENT}{致谢}
+	\renewcommand{\refname}{参考文献}
+	\renewcommand{\bibname}{参考文献}
+	\renewcommand{\DATE}{日期}
+	
+	\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+	\newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont}
+	\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+	\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+	\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+	\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+	\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+	\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}
+	\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+	\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}
+	\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+	\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+}
+
+%%%%% COMMON %%%%%
+\RequirePackage[l2tabu, orthodox]{nag}
+\RequirePackage{makeidx} \makeindex
+\RequirePackage{lipsum}
+\RequirePackage{syntonly}
+\RequirePackage[margin=1.25in]{geometry}
+\RequirePackage{microtype}
+\RequirePackage{abstract}
+\RequirePackage{babel}
+\RequirePackage[en-US]{datetime2}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\blankpage}{
+	\clearpage
+	\begin{titlepage}
+		\null\vfil
+		\begin{center}
+			\textit{This page intentionally left blank.}
+		\end{center}
+	\end{titlepage}
+}
+
+%%%%% Font Type %%%%%
+\RequirePackage[no-math]{fontspec}
+\setmainfont{Times New Roman}[NFSSFamily=ntxtlf]
+\setsansfont{Helvetica} %Arial
+\setmonofont{Courier New}
+\RequirePackage{soul,ulem,xcolor,lettrine}
+%ulem: underline
+%soul: Highlight
+%lettrine: \lettrine[lines=2]{T}{here}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\greenoverlay}[2]{\textcolor<#2>{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\blueoverlay}[2]{\textcolor<#2>{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+
+%%%%% MACRO %%%%%
+\newcommand{\AUTHOR}{Author}
+\newcommand{\STDID}{STDID}
+\newcommand{\EMAIL}{E-mail}
+\newcommand{\MAJOR}{Major}
+\newcommand{\NAME}{Zangwei Zheng}
+\newcommand{\MYMAJOR}{Computer Science}
+\newcommand{\DATE}{Date}
+\newcommand{\ACKNOWLEDGEMENT}{Acknowledgement}
+
+%%%%% TITLE %%%%%
+\newcommand{\maketitlepage}[3]{
+	\begin{titlepage}
+		\begin{center}
+			\textsc{\LARGE #1}\\[1.5cm]
+			\textsc{\Large #2}\\
+			\HRule \\[0.4cm]
+			{ \huge \bfseries #3}\\
+			\HRule \\[1.5cm]
+			
+			\begin{flushleft}
+				\hspace{5cm}
+				\begin{tabular}{@{\hspace{0.2cm}}l@{:\hspace{1cm}}l}
+					\textit{\AUTHOR} & \NAME\\
+					\textit{\STDID} & 171860658\\
+					\textit{\EMAIL} & \href{mailto:zzw@smail.nju.edu.cn}{\textcolor{black}{zzw@smail.nju.edu.cn}}\\
+				    \textit{\MAJOR} & \MYMAJOR\\
+				\end{tabular}
+			\end{flushleft}
+			\vfill
+			{\large \DTMsetdatestyle{en-US} \DTMtoday}
+		\end{center}
+	\end{titlepage}
+}
+
+\newcommand{\mktitle}[1]{
+	{\hspace*{\fill} \textsc{\LARGE #1} \hspace*{\fill}}\\[2ex]
+	\hspace*{\fill}\textbf{\AUTHOR}: \underline{\NAME}\hspace{\fill}\textbf{\STDID}: \underline{171860658}\hspace*{\fill} \textbf{\DATE}: \underline{\today} \hspace*{\fill}\\
+}
+
+%%%%% Heading and Footnote %%%%%
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{
+	\markright{\small\thesection\quad #1}
+}
+\fancyhf{}
+\fancyfoot[C]{\bfseries\thepage}
+\fancyhead[R]{\itshape\rightmark}
+\fancyhead[L]{\itshape\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%%% SECTION %%%%%
+\RequirePackage[bf,center]{titlesec}
+\RequirePackage[Sonny]{fncychap}
+%\RequirePackage{appendix}
+
+%%%%% Math %%%%%
+\RequirePackage{amsmath,latexsym,mathrsfs,mathtools,physics,array}
+\RequirePackage{newtxmath} %not with amssymb and mathabx
+%mathrsf: control mathscr
+%bm: fake boldmath
+\RequirePackage{bm,bbding,pifont,siunitx,stmaryrd,textcomp}
+%\ding{number}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclareMathOperator{\Hamilton}{\hat{H}} 
+
+
+%%%%% Fig&Table %%%%%
+\RequirePackage{caption,subcaption} %subfigures subtables
+\captionsetup{margin=10pt,font=small,labelfont=bf}
+\renewcommand{\thetable}{\thesection.\Alph{table}}
+\renewcommand{\thefigure}{\thesection.\Roman{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+\renewcommand{\thesubfigure}{\\roman{subfigure}}
+
+\RequirePackage{booktabs, diagbox, tabularx, multirow,  makecell} 
+%booktabs: toprule, midrule, buttomrule, cmidrule 
+%diagbox: \diagbox{}{}{}
+\RequirePackage{float}
+\RequirePackage{graphicx}
+\graphicspath{{./figs/}}
+\RequirePackage{tikz,tikzducks}
+\usetikzlibrary{decorations.pathmorphing,graphs,calc}
+
+\newcommand{\pic}[2]{
+	\begin{figure}[H]
+		\centering
+		\includegraphics[#1]{figs/#2}
+	\end{figure}
+}
+\newcommand{\tab}[2]{
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|*{#1}{c|}}
+		\toprule
+		#2\\
+		\bottomrule
+	\end{tabular}
+\end{table}}
+\newcommand{\tnl}{\tabularnewline\midrule}
+
+\usepackage{eso-pic} 
+\newcommand{\watermark}{
+	\DTMsetdatestyle{default} \DTMsetup{datesep={-}}
+	\DTMsettimestyle{default}
+	\AddToShipoutPicture{% 
+		\parbox[b][\paperheight]{\paperwidth}{% 
+		\vfill 
+		\centering% 
+		\begin{tikzpicture}[remember picture,overlay] 
+			\node [rotate=45,scale=10] at ($(current page.center) +(-1cm,1cm)$) 
+			{\textcolor[gray]{0.8}{DRAFT}}; 
+			\node [rotate=45,scale=3] at ($(current page.center) +(1cm,-1cm)$) 
+			{\textcolor[gray]{0.75}{Compile time: \DTMnow}}; 
+		\end{tikzpicture}% 
+		\vfill 
+		}
+	}
+}
+
+%%%%% newtheorem %%%%%
+\makeatletter
+\let\openbox\relax
+\makeatother
+\RequirePackage[amsthm, hyperref]{ntheorem}
+\theoremheaderfont{\bfseries}
+\theorembodyfont{\rmfamily}
+\theoremnumbering{arabic}
+\theoremseparator{:} 
+\theorempreskip{2ex}
+
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{axiom}{Axiom}
+\newtheorem{algorithm}{Algorithm}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{property}{Property}
+\newtheorem{assumption}{Assumption}
+\newtheorem{conclusion}{Conclusion}
+
+\theoremstyle{break}
+
+\newtheorem*{problem}{Problem}
+\theoremprework{}
+\theorempostwork{\bigskip\hrule}
+\newtheorem*{solution}{Solution}
+\newtheorem*{analasis}{Analasis}
+\newtheorem*{revision}{Revision}
+
+\theoremprework{\hrule}
+\theorempostwork{\hrule}
+\newtheorem{kp}{Knowledge Point}[section]
+\theorembodyfont{\rmfamily\uline}
+\newtheorem{hardpoint}{Hard Point}
+
+%%%%% CODE %%%%%%
+\RequirePackage{verbatim}
+%\RequirePackage{algorithm2e}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\newcommand{\pseduo}[2]{
+\begin{algorithm}
+	\caption{\textsc{#1}}
+	\label{alg:#1}
+	\begin{algorithmic}[1]
+		#2
+	\end{algorithmic}
+\end{algorithm}
+}
+
+\RequirePackage{listings}
+\lstset{
+	basicstyle=\small,
+	keywordstyle=\color{magenta}\bfseries,
+	commentstyle=\color{codegreen},
+	stringstyle=\color{codepurple}\ttfamily,
+	backgroundcolor=\color{backcolour},
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numberstyle=\tiny\color{codegray},
+	stepnumber=2,
+	numbersep=5pt,
+	showstringspaces=false,
+	showspaces=false,
+	showtabs=false,
+	tabsize=2,
+	frame=trBL
+}
+
+%%%%% Bibliography %%%%%
+%\RequirePackage{tocbibind}
+\bibliographystyle{plainnat} %IEEEtran
+\RequirePackage[numbers,sort&compress]{natbib} %citep{}, citet{}
+\newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}
+
+%%%%% hyperlink %%%%%
+\RequirePackage[colorlinks,linkcolor=blue,anchorcolor=blue，citecolor=red]{hyperref}
+\RequirePackage{cleveref} %cref{}
+
+%%%%% HELP %%%%%
+% http://www.latexstudio.net/hulatex/index.htm

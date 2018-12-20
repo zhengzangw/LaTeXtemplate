@@ -1,0 +1,147 @@
+% file: parts/treasure-hunt.tex
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.45\textwidth}{figs/treasure-hunt}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.45\textwidth}{figs/hints}
+    \column{0.50\textwidth}
+      \fig{width = 0.50\textwidth}{figs/help-wanted}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{exampleblock}{Problem of the Week (Monday, April 2, 2018 $\sim$ Saturday, April 7, 2018)}
+    \begin{enumerate}[(a)]
+      \item Given an array $A[0 \cdots n-1]$, to determine whether there is a value that \red{\it occurs more than $\lfloor n/k \rfloor$ times}
+	in $\Theta(n \lg k)$ time and $\Theta(k)$ extra space.
+      \item Prove that the \blue{\it lower bound} of this problem is $\Theta(n \lg k)$.
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/tip-1}{\vspace{-0.50cm} \centerline{\textcolor{violet}{\small (Monday, April 2, 2018)}}}
+
+  \vspace{0.30cm}
+  \begin{exampleblock}{}
+    \centerline{\teal{Take $k = 2.$}}
+    \[
+      \red{\Theta(n) \text{ time } \;\&\; \Theta(1) \text{ space}}
+    \]
+  \end{exampleblock}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/tip-2}{\vspace{-0.50cm} \centerline{\textcolor{violet}{\small (Tuesday, April 3, 2018)}}}
+  
+  \begin{definition}[$k$-simplified Multiset]
+    Consider a multiset $\mathcal{M}$.
+    A \red{\emph{$k$-simplified multiset}} for $\mathcal{M}$ is a multiset derived from $\mathcal{M}$
+    by repeating \purple{\it deleting $k$ distinct elements} from it until no longer possible.
+
+  \end{definition}
+
+  % The only values that \red{may} occur more than $\lfloor n / k \rfloor$ times in $\mathcal{M}$ of $n$ elements
+  % are the values in a $k$-simplified multiset for $\mathcal{M}$.
+
+  \begin{theorem}
+    If a value occurs more than $\lfloor n / k \rfloor$ times in $\mathcal{M}$ of $n$ elements,
+    then it is in a $k$-simplified multiset for $\mathcal{M}$.
+  \end{theorem}
+
+  Prove this theorem. Take $k = 2$ again. Design an $\Theta(n)$ algorithm for $k = 2$. 
+  Generalize it to an algorithm for general $k$ (ignoring $\Theta(n \lg k)$ for now).
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/tip-3}{\vspace{-0.50cm} \centerline{\textcolor{violet}{\small (Wednesday, April 4, 2018)}}}
+
+  \vspace{0.30cm}
+  \begin{exampleblock}{Today, you have an efficient data structure $T$ for a multiset:}
+    We denote a multiset by $\mathcal{M} = set{(v_i, c_i)}$,
+    where $c_i$ is the number of times $v_i$ occurs in $\mathcal{M}$.
+    The number of distinct values in $\mathcal{M}$ is denoted by $d = |set{v_i}|$.\\[6pt]
+
+    The data structure $T$ for $\mathcal{M}$ contains $d$ nodes, each being a pair $(v_i, c_i)$.
+
+    It supports \textsc{Insert}, \textsc{Delete}, and \textsc{Search} in $\Theta(\lg d)$.
+  \end{exampleblock}
+
+  \begin{center}
+    Use this data structure \textcolor{gray}{\small (you are not required to implement it)} \\
+    in your algorithm to achieve the time complexity of $\Theta(n \lg k)$.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/tip-4}{\vspace{-0.50cm} \centerline{\textcolor{violet}{\small (Thursday, April 5, 2018)}}}
+  \vspace{0.30cm}
+
+  \begin{definition}[$r$-list]
+    Let $r = \lfloor n/k \rfloor$.
+    An \red{$r$-list} is a list of $n$ values such that
+    each of the values $0, 1, \cdots, \lfloor n/r \rfloor - 1$ occurs $r$ times 
+    and the value $\lfloor n/r \rfloor$ occurs ($n \mod r$) times.
+  \end{definition}
+
+  \begin{lemma}
+    There are at least $(k/e)^{n}$ different $r$-lists.
+  \end{lemma}
+
+  \begin{theorem}
+    Executing these $r$-lists on a decision tree will follow different paths.
+  \end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/tip-5}{\vspace{-0.50cm} \centerline{\textcolor{violet}{\small (Friday, April 6, 2018)}}}
+  \vspace{0.30cm}
+
+  \begin{definition}[$L = L_1 \ast L_2$]
+    Given two lists $L_1$ and $L_2$, a new list $L = L_1 \ast L_2$ is defined as follows:
+    \[
+      L[i] = \min \big\{ L_1[i], L_2[i] \big\}, 0 \le i < n
+    \]
+  \end{definition}
+
+  \begin{theorem}
+    If $r$-lists $L_1$ and $L_2$ are different, then $L = L_1 \ast L_2$ \red{contains} a value which occurs more than $r$ times.
+  \end{theorem}
+
+  \begin{center}
+    Prove the theorem on Thursday \red{\it by contradiction}, \\
+    with the help of the definition and theorem above.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \fig{width = 0.30\textwidth}{figs/tip-6}{\vspace{-0.50cm} \centerline{\textcolor{violet}{\small (Saturday, April 7, 2018)}}}
+  \vspace{0.30cm}
+
+  \begin{center}
+    Paper {\small \teal{(Clickable)}}: \\[5pt]
+
+    \href{http://cslabcms.nju.edu.cn/problem\_solving/images/b/bf/Finding\_Repeated\_Elements\_\%28Misra\_1982\%29.pdf}
+    {\blue{\it Finding Repeated Elements} (J. Misra, David Gries, 1982)}
+  \end{center}
+  
+  %\fig{width = 0.20\textwidth}{figs/qrcode-repeated-paper}
+\end{frame}
+%%%%%%%%%%%%%%%

@@ -1,0 +1,116 @@
+% File: preamble.tex
+
+%%%%% Style %%%%%
+\usepackage{ctex}
+\usepackage{lmodern}
+\usetheme{Szeged} % try Pittsburgh,Szeged,Singapore,CambridgeUS
+\usecolortheme{dolphin} %try beaver,dolphin,whale
+\usefonttheme[onlymath]{serif} % try "professionalfonts",serif
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+%%%%% Color %%%%%
+\usepackage{soul,ulem,xcolor,lettrine}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\redoverlay}[2]{\textcolor<#2>{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\greenoverlay}[2]{\textcolor<#2>{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\blueoverlay}[2]{\textcolor<#2>{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+% colorded box
+\newcommand{\rbox}[1]{\red{\boxed{#1}}}
+\newcommand{\gbox}[1]{\green{\boxed{#1}}}
+\newcommand{\bbox}[1]{\blue{\boxed{#1}}}
+\newcommand{\pbox}[1]{\purple{\boxed{#1}}}
+\newcommand{\cmark}{\green{\ding{51}}}
+\newcommand{\xmark}{\red{\ding{55}}}
+
+%%%%% PACKAGE %%%%%
+\usepackage{comment}
+\usepackage{amsmath,latexsym, amsfonts, amssymb, mathrsfs, mathtools, physics, array}
+\usepackage{bm,bbding,pifont,siunitx}
+\usepackage{wasysym}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning, mindmap, shadows}
+
+%%%%% Picture %%%%%
+\usepackage{graphicx}
+\graphicspath{{./figs/}}
+\newcommand{\fig}[2]{
+  \begin{figure}[htp]
+    \centering
+      \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+%%%%% Appreciation %%%%%
+\newcommand{\thankyou}{
+  \begin{frame}[noframenumbering]{}
+    \fig{width = 0.50\textwidth}{thankyou.png}
+  \end{frame}
+}
+
+%%%%% Suggestion %%%%%
+\newcommand{\suggestion}{
+  \begin{frame}[noframenumbering]
+    \fig{width = 0.50\textwidth}{matters.png}
+    \begin{center}{ \large \href{mailto:zzw@smail.nju.edu.cn}{zzw@smail.nju.edu.cn}}
+    \end{center}
+  \end{frame}
+}
+
+
+%%%%% Section %%%%%
+\AtBeginSection[]{
+  \begin{frame}[noframenumbering, plain]
+    \frametitle{\titletext}
+    \tableofcontents[currentsection, sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+%%%%% TITLR %%%%%
+\author[郑奘巍]{\large 郑奘巍}
+\institute{\href{mailto:zzw@smail.nju.edu.cn}{zzw@smail.nju.edu.cn}}
+\date{\today}
+
+%%%%% CODE %%%%%
+%%%%% CODE %%%%%%
+\usepackage{verbatim}
+%\usepackage{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\newcommand{\pseduo}[2]{
+\begin{algorithm}
+	\caption{\textsc{#1}}
+	\label{alg:#1}
+	\begin{algorithmic}[1]
+		#2
+	\end{algorithmic}
+\end{algorithm}
+}
+
+\usepackage{listings}
+\lstset{
+	basicstyle=\small,
+	keywordstyle=\color{magenta}\bfseries,
+	commentstyle=\color{codegreen},
+	stringstyle=\color{codepurple}\ttfamily,
+	backgroundcolor=\color{backcolour},
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numberstyle=\tiny\color{codegray},
+	stepnumber=2,
+	numbersep=5pt,
+	showstringspaces=false,
+	showspaces=false,
+	showtabs=false,
+	tabsize=2,
+	frame=trBL
+}

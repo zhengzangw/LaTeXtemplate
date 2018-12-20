@@ -1,0 +1,202 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{Zangwei Zheng}
+
+\def\footerlink{}
+
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {economics, statistics, mathematics},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 9.5in},
+  left=1.0in,
+  top=1.0in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\setlength{\parsep}{0pt}
+\setlength{\parskip}{0pt}
+\usepackage{titlesec}
+\titlespacing*{\section} {0pt}{-8pt}{0pt}
+\titlespacing*{\subsection} {0pt}{9pt}{0pt}
+\begin{document}
+
+% Place name at left
+%{\huge \name}
+
+% Alternatively print name centered and bold:
+\centerline{\huge \bf \name}
+\vspace{-0.1in}
+\begin{itemize}
+  \setlength{\itemsep}{-3pt}
+  \centering
+  \item[$\bullet$] Jiangsu Province, Nanjing, Qixia District, Xianlin Road No.163
+  \item[$\bullet$] zzw@smail.nju.edu.com $\bullet$ (86) 18852000199
+\end{itemize}
+
+%\begin{minipage}{0.45\linewidth}
+  %\href{https://www.nju.edu.cn/}{Nanjing University} \\
+  %\href{https://cs.nju.edu.cn/main.htm}{Department of Computer Science} \\
+  %\\
+  %\\
+%\end{minipage}
+%\hfill
+%\begin{minipage}{0.45\linewidth}
+  %\begin{tabular}{ll}
+    %Phone: & 18852000199 \\
+    %Email: & \href{mailto:zzw@smail.nju.edu.cn}{\tt zzw@smail.nju.edu.cn} \\
+    %Birth Year: & 1999 \\
+    %Nationality: & Chinese
+  %\end{tabular}
+%\end{minipage}
+
+\section*{\textsc{Education}}
+\noindent\rule[10pt]{\textwidth}{0.2pt}\vspace{-30pt}
+\begin{itemize}
+  \setlength{\itemsep}{-2pt}
+  \item {\bfseries Nanjing University}\hfill Nanjing, China
+  \item {\it B.S Computer Science, Training plan of the national basic subject top-notch talent}
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {\bfseries GPA: 4.62/5.00\hspace{0.25\textwidth}Rank: 3/31}\hfill {\it 2017 - Aug 2018}
+    \item[$\circ$] Course Highlight: \begin{tabular}{ll}
+               Probleam Solving & \ Introduction to Data Mining
+    \end{tabular}
+    \item[$\circ$] Academic Advisor: \href{http://cs.nju.edu.cn/lim/}{Ming Li}, Ph. D., Professor
+  \end{itemize}
+
+\end{itemize}
+
+\section*{Project Experience}
+\noindent\rule[10pt]{\textwidth}{0.2pt}\vspace{-30pt}
+\begin{itemize}
+  \setlength{\itemsep}{-2pt}
+  \item {\bfseries\href{https://www.kaggle.com/c/nju-introdm/}{NJU Cloning Code Detecter}}
+  \item {\it ML model to detect codes with the same function \hfill May 2018 - June 2018} 
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {Generated Matrix Representation for each code and created new formula\\ for Judgement Complexity}
+    \item[$\circ$] {Implemented Random Forest with Numpy and compared with many\\ other models} 
+  \end{itemize}
+
+  \item {\bfseries \href{https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting}{Restaurant Visitor Predictor}}
+  \item {\it Predict how many future visitors a restaurant will receive for {Kaggle Competition} \hfill Nov 2017 - Jan 2018} 
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {Collected relevant data and cleaned data with Time Series Analysis}
+    \item[$\circ$] {Implemented RNN with Tensorflow} 
+  \end{itemize}
+
+  \item {\bfseries AI for ZTE TuringCup 2017}
+  \item {\it An AI for given 4 players RPG game \hfill Nov 2017}
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {Designed the greedy strategy for the given game}
+    \item[$\circ$] {Implemented with C\#} 
+  \end{itemize}
+  
+\end{itemize}
+
+\section*{Technical Skills}
+\noindent\rule[10pt]{\textwidth}{0.2pt}\vspace{-30pt}
+\begin{itemize}
+  \setlength{\itemsep}{-2pt}
+  \item \bfseries{Proficient} {\it C/C++, Python}
+  \item \bfseries{Familiar} {\it Linux, Java}
+  \item \bfseries{Tools} {\it Git, Matlab, \LaTeX, Adobe Photoshop/Premiere}
+\end{itemize}
+
+\section*{Leadership}
+\noindent\rule[10pt]{\textwidth}{0.2pt}\vspace{-30pt}\begin{itemize}
+  \setlength{\itemsep}{-2pt}
+  \item {\bfseries Nanjing University}
+  \item {\it Leader of 2017 Computer Science top-notch talent class. \hfill Sept 2017 - Present}
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {Organized two activities each month for class students}
+    \item[$\circ$] {School May 4 outstanding cadres} 
+  \end{itemize}
+\end{itemize}
+
+\section*{Activities}
+\noindent\rule[10pt]{\textwidth}{0.2pt}\vspace{-30pt}\begin{itemize}
+  \setlength{\itemsep}{-2pt}
+  \item {\bfseries Debate Player}
+  \item {\it Debate Player of Computer Sicence. \hfill Oct 2017 - Present}
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {One of the Best Debater in College Cup, 15/80}
+  \end{itemize}
+\end{itemize}
+
+\section*{Honor}
+\noindent\rule[10pt]{\textwidth}{0.2pt}\vspace{-30pt}
+\begin{itemize}
+  \setlength{\itemsep}{-2pt}
+  \item {\bfseries{ACM-ICPC Xuzhou National Invitational Tournament}} \hfill {\it June 2018}
+  \item {\it Silver Award, 20\% of 195 teams}
+  \vspace{-6pt} 
+  \begin{itemize}
+    \setlength{\itemsep}{-2pt}
+    \item[$\circ$] {Designed algorithm for all kinds of problems}
+  \end{itemize}
+  \item {\bfseries{The Second Prize Scholar Ship of Top-notch Talent Students} }\hfill {\it Sept 2018}
+  \item {\it 25\% of students in training plan of the national basic subject top-notch talent}
+\end{itemize}
+
+% Footer
+\begin{center}
+  \begin{footnotesize}
+    Last updated: \today \\
+    \href{\footerlink}{\texttt{\footerlink}}
+  \end{footnotesize}
+\end{center}
+
+\end{document}
