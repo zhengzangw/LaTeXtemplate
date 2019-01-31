@@ -255,7 +255,7 @@
   }
 }
 \NewDocumentCommand{\infot}{m O{} m O{}}{
-    \item {\bfseries \ifenelifch{#1}{#2}} \hfill {\it \ifenelifch{#4}{#3}}%
+    \item {\bfseries \ifenelifch{#1}{#2}} \hfill {\it \ifenelifch{#3}{#4}}%
 }
 \newenvironment{detail}{\ifenelifch{\vspace{-2pt}}{} \begin{itemize}}{\end{itemize}}
 \newcommand{\cv@eng@seperator}{:}

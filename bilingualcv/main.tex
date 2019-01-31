@@ -1,4 +1,4 @@
-\documentclass[language=english]{bilingualcv}
+\documentclass[language=chinese]{bilingualcv}
 \begin{document}
 \cvsetup{
     eauthor=Zangwei Zheng,
@@ -20,12 +20,19 @@
     \end{detail}
 \end{education}
 \begin{project}
+
+    %-----------------------------------------------------------------%
+    %--> 数据挖掘导论项目
+    %-----------------------------------------------------------------%
     \info{\href{https://www.kaggle.com/c/nju--introdm/}{NJU Cloning Code Detecter}}[\href{https://www.kaggle.com/c/nju--introdm/}{克隆代码检测器}]{ML model to detect codes with the same function}[利用机器学习模型检测拥有相同功能的代码]{May 2018 -- June 2018}[2018.5 -- 2018.6]
     \begin{detail}
         \entry{Generated Matrix Representation for each code and created new formula\\ for Judgement Complexity}[将代码转换为表示矩阵，设计新的条件复杂度公式]
         \entry{Implemented Random Forest with Numpy and compared with many\\ other models}[使用随机森林及其它学习算法设计模型]
     \end{detail}
     
+    %-----------------------------------------------------------------%
+    %--> 数电项目
+    %-----------------------------------------------------------------%
     \infot{\href{https://github.com/zhengzangw/NJU\_MIPS}{NJU\_MIPS}{A MIPS32 system with 5 levels pipeline CPU}}[\href{https://github.com/zhengzangw/NJU\_MIPS}{五级流水线 MIPS32 系统}]{Dec 2018 -- Jan 2019}[2018.12 -- 2018.1]
 
     \begin{detail}
@@ -34,13 +41,24 @@
         \entry{Support C program with Input/Output}[利用运行时环境（AM）编译C程序到CPU上运行]
     \end{detail} 
 
+    %-----------------------------------------------------------------%
+    %--> 谷歌冬令营项目
+    %-----------------------------------------------------------------%
+    \info{\href{https://github.com/zhengzangw/ml-winter-camp}{MBTI type Detection}}[\href{https://github.com/zhengzangw/ml-winter-camp}{MBTI人格预测器}]{a ML model trained to detect people's MBTI type based what they write down in their post}[利用人们在论坛网站上的数据预测其MBTI性格]{Jan 2019}[2019.1]
+    \begin{detail}
+        \entry{High performance (accuracy and F1 score) with a CNN network}[利用卷积网络模型得到很好的性能（高准确率和F1值）]
+        \entry{Build a application that detect the contribution of each word to your personality in real-time.}[编写了一个可以实时判断输入每个单词对性格贡献度的应用]
+    \end{detail}
+    %-----------------------------------------------------------------%
+    %--> LATEX项目
+    %-----------------------------------------------------------------%
     \backup{
-        \info{Restaurant Visitor Predictor}{Predict how many future visitors a restaurant will receive for {Kaggle Competition}}{Nov 2017 -- Jan 2018}
-        \begin{detail}
-            \item Collected relevant data and cleaned data with Time Series Analysis
-            \item Implemented RNN with Tensorflow
-        \end{detail}
+    \info{\href{https://github.com/zhengzangw/njurepo}{NJU-repo}}[\href{https://github.com/zhengzangw/njurepo{NJU-repo}}]{A \LaTeX thesis template package for experiment report and general use}[长达2000行的\LaTeX{}宏包]{Jan 2019}[2019.1]
+    \begin{detail}
+        \entry{Released on CTAN}[发布于CTAN]
+    \end{detail}
     }
+
 \end{project}
 \begin{skill}
     \ecomma[b]{Proficient}{C/C++, Python}
